@@ -5,7 +5,7 @@ pipeline {
             steps{
                 
             sh '''
-             mkdir /dev1
+             sudo mkdir /dev1
              cp -vrf * /dev1
             if docker ps | grep dev1
             then 
