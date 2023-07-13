@@ -1,5 +1,5 @@
 pipeline {
-  agent {
+  agent any {
     sh '''
     sudo cp -vrf * /dev1
     if sudo docker ps | grep dev1
