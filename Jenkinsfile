@@ -6,17 +6,17 @@ pipeline {
                 
             sh '''
              uname 
-             cp -vrf * /dev1/
-            if docker ps | grep dev1
+             sudo cp -vrf * /dev1/
+            if sudo docker ps | grep dev1
             then 
               echo 'already running'
             else
-              if docker ps | grep dev1
+              if sudo docker ps | grep dev1
                then 
-                docker rm -f dev1
+                sudo docker rm -f dev1
               fi
               else
-                docker run -itd -p 81:80 -v /dev1:/usr/local/apache2/htdocs/ --name dev1 httpd
+                sudo docker run -itd -p 81:80 -v /dev1:/usr/local/apache2/htdocs/ --name dev1 httpd
             fi
             '''
                  
